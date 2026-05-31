@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz UF1302 - HTML, Accesibilidad y Usabilidad</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+:root{--fuente-base:Arial,Helvetica,sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--fuente-base);background:#f4f7fb;color:#1f2937}.hero{background:linear-gradient(135deg,#111827,#2563eb);color:#fff;padding:64px 20px;text-align:center}.hero-contenido{max-width:1100px;margin:0 auto}.etiqueta{display:inline-block;background:rgba(255,255,255,.16);color:#dbeafe;padding:8px 16px;border-radius:999px;font-size:14px;margin-bottom:20px}h1{font-size:46px;margin:0 0 18px;line-height:1.1}.hero p{font-size:19px;max-width:780px;margin:0 auto 30px;line-height:1.6;color:#e5e7eb}.hero-datos{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:30px}.dato{background:rgba(255,255,255,.13);padding:16px 24px;border-radius:18px;min-width:160px}.dato strong{display:block;font-size:30px}.dato span{font-size:14px;color:#dbeafe}.contenedor{width:92%;max-width:1150px;margin:40px auto}.panel-info{background:#fff;padding:28px;border-radius:24px;box-shadow:0 18px 40px rgba(15,23,42,.08);margin-bottom:32px;border:1px solid #e5e7eb}.panel-info h2{margin-top:0;color:#111827;font-size:28px}.panel-info p{line-height:1.6;color:#4b5563;font-size:17px}.acciones-superiores{display:flex;gap:15px;flex-wrap:wrap;margin-top:22px}button{border:none;cursor:pointer;font-size:16px;border-radius:14px;padding:13px 22px;transition:.2s;font-family:inherit}.btn-principal{background:#2563eb;color:#fff}.btn-principal:hover{background:#1d4ed8;transform:translateY(-2px)}.btn-secundario{background:#e5e7eb;color:#111827}.btn-secundario:hover{background:#d1d5db;transform:translateY(-2px)}.btn-pregunta{background:#111827;color:#fff;margin-top:18px}.btn-pregunta:hover{background:#374151;transform:translateY(-2px)}.barra-progreso{background:#e5e7eb;border-radius:999px;overflow:hidden;height:15px;margin:26px 0 10px}.progreso{background:linear-gradient(90deg,#2563eb,#22c55e);width:0%;height:100%;transition:width .4s}.texto-progreso{font-size:15px;color:#6b7280}.quiz{display:grid;gap:26px}.pregunta{background:#fff;border-radius:24px;padding:28px;box-shadow:0 18px 40px rgba(15,23,42,.08);border:1px solid #e5e7eb}.pregunta-header{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:18px}.numero{background:#eff6ff;color:#2563eb;padding:8px 15px;border-radius:999px;font-weight:bold;font-size:14px;white-space:nowrap}.nivel{padding:8px 15px;border-radius:999px;font-size:14px;font-weight:bold;white-space:nowrap}.nivel.basico{background:#dcfce7;color:#166534}.nivel.medio{background:#fef3c7;color:#92400e}.nivel.avanzado{background:#fee2e2;color:#991b1b}.pregunta h3{margin:0;font-size:22px;line-height:1.45;font-family:var(--fuente-base)}.pregunta h3 .codigo{font-family:inherit}.opciones{display:grid;gap:13px;margin-top:22px}.opcion{border:2px solid #e5e7eb;border-radius:17px;padding:16px;background:#f9fafb;display:flex;gap:12px;align-items:flex-start;transition:.2s}.opcion:hover{border-color:#93c5fd;background:#eff6ff}.opcion input{margin-top:5px;transform:scale(1.15);flex:0 0 auto}.opcion label{cursor:pointer;line-height:1.5;width:100%;font-size:16px;color:#1f2937}.opcion label .codigo{font-family:inherit}.opcion.correcta{background:#dcfce7;border-color:#22c55e}.opcion.incorrecta{background:#fee2e2;border-color:#ef4444}.feedback{display:none;margin-top:20px;padding:18px;border-radius:17px;line-height:1.6;font-size:16px}.feedback.correcto{display:block;background:#dcfce7;border-left:7px solid #22c55e;color:#14532d}.feedback.incorrecto{display:block;background:#fee2e2;border-left:7px solid #ef4444;color:#7f1d1d}.feedback strong{font-weight:700}.explicacion{margin-top:10px;color:#374151}.resultado-final{display:none;background:#fff;padding:34px;border-radius:26px;box-shadow:0 18px 40px rgba(15,23,42,.08);margin:42px 0;border:1px solid #e5e7eb;text-align:center}.resultado-final.visible{display:block}.resultado-final h2{font-size:36px;margin-bottom:10px}.puntuacion{font-size:60px;font-weight:bold;color:#2563eb;margin:20px 0}.mensaje-final{font-size:18px;color:#4b5563;line-height:1.6;max-width:760px;margin:0 auto 28px}.codigo{font-family:Consolas,Menlo,Monaco,monospace;background:#f3f4f6;border:1px solid #e5e7eb;border-radius:8px;padding:2px 6px;white-space:normal}@media(max-width:900px){h1{font-size:38px}.hero{padding:52px 20px}.hero p{font-size:18px}.contenedor{width:94%}.pregunta{padding:24px}.pregunta h3{font-size:20px}}@media(max-width:600px){.hero{padding:42px 16px}h1{font-size:30px}.hero p{font-size:16px}.dato{width:100%;min-width:auto}.contenedor{width:94%;margin:24px auto}.panel-info{padding:20px;border-radius:20px}.panel-info h2{font-size:23px}.panel-info p{font-size:16px}.acciones-superiores{flex-direction:column}button{width:100%;font-size:16px;padding:14px}.pregunta{padding:20px;border-radius:20px}.pregunta-header{flex-direction:column;gap:10px}.pregunta h3{font-size:18px}.opcion{padding:14px}.opcion label{font-size:15px}.feedback{font-size:15px}.resultado-final{padding:24px}.resultado-final h2{font-size:28px}.puntuacion{font-size:44px}.mensaje-final{font-size:16px}}@media(min-width:1300px){.contenedor{max-width:1250px}.pregunta h3{font-size:24px}.opcion label{font-size:17px}}
+</style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-contenido">
+            <span class="etiqueta">UF1302 · Creación de páginas web con lenguaje de marcas</span>
+            <h1>Quiz interactivo de HTML, accesibilidad y usabilidad</h1>
+            <p>Responde a cada pregunta y corrígela de forma individual. También puedes corregir todo el cuestionario al final para obtener tu puntuación global.</p>
+            <div class="hero-datos">
+                <div class="dato"><strong>30</strong><span>preguntas</span></div>
+                <div class="dato"><strong>1 a 1</strong><span>corrección individual</span></div>
+                <div class="dato"><strong>100%</strong><span>responsive</span></div>
+            </div>
+        </div>
+    </header>
+    <main class="contenedor">
+        <section class="panel-info">
+            <h2>Instrucciones</h2>
+            <p>Selecciona una respuesta y pulsa <strong>Corregir pregunta</strong>. La aplicación te dirá si has acertado y te mostrará una explicación. Al final puedes pulsar <strong>Corregir todo el quiz</strong> para obtener la puntuación final.</p>
+            <div class="barra-progreso"><div class="progreso" id="progreso"></div></div>
+            <p class="texto-progreso" id="textoProgreso">Has respondido 0 de 30 preguntas.</p>
+            <div class="acciones-superiores">
+                <button class="btn-principal" type="button" onclick="corregirQuiz()">Corregir todo el quiz</button>
+                <button class="btn-secundario" type="button" onclick="reiniciarQuiz()">Reiniciar</button>
+            </div>
+        </section>
+        <section class="quiz" id="quiz">
+            
+                <article class="pregunta" id="pregunta-0" data-correcta="1" data-explicacion="HTML es el lenguaje de marcas que se utiliza para organizar el contenido de una página web: títulos, párrafos, imágenes, enlaces, listas, tablas, formularios y otros elementos.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 1</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3>¿Cuál es la función principal de HTML en una página web?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-0-0">
+                        <input type="radio" name="pregunta-0" id="p0o0" value="0">
+                        <label for="p0o0">Dar movimiento avanzado a los elementos de la página.</label>
+                    </div>
+                    <div class="opcion" id="opcion-0-1">
+                        <input type="radio" name="pregunta-0" id="p0o1" value="1">
+                        <label for="p0o1">Crear la estructura y el contenido de una página web.</label>
+                    </div>
+                    <div class="opcion" id="opcion-0-2">
+                        <input type="radio" name="pregunta-0" id="p0o2" value="2">
+                        <label for="p0o2">Diseñar bases de datos para guardar información.</label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(0)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-0"></div>
+                </article>
+                <article class="pregunta" id="pregunta-1" data-correcta="1" data-explicacion="La etiqueta &lt;html&gt; envuelve todo el documento HTML. Dentro de ella se colocan normalmente &lt;head&gt; y &lt;body&gt;.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 2</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3>¿Qué etiqueta indica el inicio de un documento HTML?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-1-0">
+                        <input type="radio" name="pregunta-1" id="p1o0" value="0">
+                        <label for="p1o0"><span class="codigo">&lt;body&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-1-1">
+                        <input type="radio" name="pregunta-1" id="p1o1" value="1">
+                        <label for="p1o1"><span class="codigo">&lt;html&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-1-2">
+                        <input type="radio" name="pregunta-1" id="p1o2" value="2">
+                        <label for="p1o2"><span class="codigo">&lt;head&gt;</span></label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(1)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-1"></div>
+                </article>
+                <article class="pregunta" id="pregunta-2" data-correcta="2" data-explicacion="La etiqueta &lt;body&gt; contiene todo lo que el usuario ve en la página: textos, imágenes, enlaces, formularios, botones y secciones.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 3</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3>¿Qué parte del documento HTML contiene el contenido visible de la página?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-2-0">
+                        <input type="radio" name="pregunta-2" id="p2o0" value="0">
+                        <label for="p2o0"><span class="codigo">&lt;head&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-2-1">
+                        <input type="radio" name="pregunta-2" id="p2o1" value="1">
+                        <label for="p2o1"><span class="codigo">&lt;title&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-2-2">
+                        <input type="radio" name="pregunta-2" id="p2o2" value="2">
+                        <label for="p2o2"><span class="codigo">&lt;body&gt;</span></label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(2)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-2"></div>
+                </article>
+                <article class="pregunta" id="pregunta-3" data-correcta="1" data-explicacion="La etiqueta &lt;title&gt; se coloca dentro de &lt;head&gt; y define el texto que aparece en la pestaña del navegador.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 4</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3><span class="codigo">¿Para qué sirve la etiqueta &lt;title&gt;?</span></h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-3-0">
+                        <input type="radio" name="pregunta-3" id="p3o0" value="0">
+                        <label for="p3o0">Para mostrar el título principal dentro del contenido visible.</label>
+                    </div>
+                    <div class="opcion" id="opcion-3-1">
+                        <input type="radio" name="pregunta-3" id="p3o1" value="1">
+                        <label for="p3o1">Para indicar el título que aparece en la pestaña del navegador.</label>
+                    </div>
+                    <div class="opcion" id="opcion-3-2">
+                        <input type="radio" name="pregunta-3" id="p3o2" value="2">
+                        <label for="p3o2">Para crear un subtítulo dentro de una sección.</label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(3)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-3"></div>
+                </article>
+                <article class="pregunta" id="pregunta-4" data-correcta="1" data-explicacion="El título principal de una página suele marcarse con &lt;h1&gt;. Las etiquetas &lt;h2&gt;, &lt;h3&gt;, etc. se utilizan para subtítulos y apartados.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 5</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3>¿Cuál es la etiqueta más adecuada para el título principal de una página?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-4-0">
+                        <input type="radio" name="pregunta-4" id="p4o0" value="0">
+                        <label for="p4o0"><span class="codigo">&lt;h6&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-4-1">
+                        <input type="radio" name="pregunta-4" id="p4o1" value="1">
+                        <label for="p4o1"><span class="codigo">&lt;h1&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-4-2">
+                        <input type="radio" name="pregunta-4" id="p4o2" value="2">
+                        <label for="p4o2"><span class="codigo">&lt;strong&gt;</span></label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(4)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-4"></div>
+                </article>
+                <article class="pregunta" id="pregunta-5" data-correcta="0" data-explicacion="La etiqueta &lt;p&gt; se utiliza para crear párrafos de texto en HTML.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 6</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3>¿Qué etiqueta se utiliza para crear un párrafo?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-5-0">
+                        <input type="radio" name="pregunta-5" id="p5o0" value="0">
+                        <label for="p5o0"><span class="codigo">&lt;p&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-5-1">
+                        <input type="radio" name="pregunta-5" id="p5o1" value="1">
+                        <label for="p5o1"><span class="codigo">&lt;parrafo&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-5-2">
+                        <input type="radio" name="pregunta-5" id="p5o2" value="2">
+                        <label for="p5o2"><span class="codigo">&lt;text&gt;</span></label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(5)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-5"></div>
+                </article>
+                <article class="pregunta" id="pregunta-6" data-correcta="0" data-explicacion="Los encabezados deben seguir una jerarquía lógica. Esto ayuda a organizar la información y mejora la accesibilidad, especialmente para usuarios con lector de pantalla.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 7</span>
+                        <span class="nivel medio">Medio</span>
+                    </div>
+                    <h3><span class="codigo">¿Qué problema puede tener saltar de un &lt;h1&gt; directamente a un &lt;h4&gt; sin motivo?</span></h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-6-0">
+                        <input type="radio" name="pregunta-6" id="p6o0" value="0">
+                        <label for="p6o0">Puede dificultar la comprensión de la estructura del contenido.</label>
+                    </div>
+                    <div class="opcion" id="opcion-6-1">
+                        <input type="radio" name="pregunta-6" id="p6o1" value="1">
+                        <label for="p6o1">Hace que la página no pueda mostrar imágenes.</label>
+                    </div>
+                    <div class="opcion" id="opcion-6-2">
+                        <input type="radio" name="pregunta-6" id="p6o2" value="2">
+                        <label for="p6o2">Impide que el navegador abra la página.</label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(6)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-6"></div>
+                </article>
+                <article class="pregunta" id="pregunta-7" data-correcta="1" data-explicacion="La etiqueta &lt;ol&gt; crea una lista ordenada, normalmente numerada. La etiqueta &lt;ul&gt; crea una lista no ordenada.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 8</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3>¿Qué etiqueta se utiliza para crear una lista ordenada?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-7-0">
+                        <input type="radio" name="pregunta-7" id="p7o0" value="0">
+                        <label for="p7o0"><span class="codigo">&lt;ul&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-7-1">
+                        <input type="radio" name="pregunta-7" id="p7o1" value="1">
+                        <label for="p7o1"><span class="codigo">&lt;ol&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-7-2">
+                        <input type="radio" name="pregunta-7" id="p7o2" value="2">
+                        <label for="p7o2"><span class="codigo">&lt;li&gt;</span></label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(7)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-7"></div>
+                </article>
+                <article class="pregunta" id="pregunta-8" data-correcta="1" data-explicacion="Cada elemento de una lista se marca con &lt;li&gt;, tanto en listas ordenadas &lt;ol&gt; como en listas no ordenadas &lt;ul&gt;.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 9</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3>¿Qué etiqueta se utiliza para cada elemento de una lista?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-8-0">
+                        <input type="radio" name="pregunta-8" id="p8o0" value="0">
+                        <label for="p8o0"><span class="codigo">&lt;item&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-8-1">
+                        <input type="radio" name="pregunta-8" id="p8o1" value="1">
+                        <label for="p8o1"><span class="codigo">&lt;li&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-8-2">
+                        <input type="radio" name="pregunta-8" id="p8o2" value="2">
+                        <label for="p8o2"><span class="codigo">&lt;list&gt;</span></label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(8)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-8"></div>
+                </article>
+                <article class="pregunta" id="pregunta-9" data-correcta="1" data-explicacion="La etiqueta &lt;a&gt; se utiliza para crear enlaces. El atributo href indica el destino.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 10</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3>¿Qué etiqueta se utiliza para crear un enlace?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-9-0">
+                        <input type="radio" name="pregunta-9" id="p9o0" value="0">
+                        <label for="p9o0"><span class="codigo">&lt;link&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-9-1">
+                        <input type="radio" name="pregunta-9" id="p9o1" value="1">
+                        <label for="p9o1"><span class="codigo">&lt;a&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-9-2">
+                        <input type="radio" name="pregunta-9" id="p9o2" value="2">
+                        <label for="p9o2"><span class="codigo">&lt;href&gt;</span></label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(9)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-9"></div>
+                </article>
+                <article class="pregunta" id="pregunta-10" data-correcta="1" data-explicacion="El atributo href indica a dónde lleva un enlace: otra página, una sección, un archivo o una dirección web externa.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 11</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3>¿Qué atributo indica el destino de un enlace?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-10-0">
+                        <input type="radio" name="pregunta-10" id="p10o0" value="0">
+                        <label for="p10o0">src</label>
+                    </div>
+                    <div class="opcion" id="opcion-10-1">
+                        <input type="radio" name="pregunta-10" id="p10o1" value="1">
+                        <label for="p10o1">href</label>
+                    </div>
+                    <div class="opcion" id="opcion-10-2">
+                        <input type="radio" name="pregunta-10" id="p10o2" value="2">
+                        <label for="p10o2">alt</label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(10)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-10"></div>
+                </article>
+                <article class="pregunta" id="pregunta-11" data-correcta="1" data-explicacion="Un enlace debe explicar claramente a dónde lleva. &#x27;Ir a la página de contacto&#x27; es más claro que textos genéricos como &#x27;haz clic aquí&#x27; o &#x27;más&#x27;.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 12</span>
+                        <span class="nivel medio">Medio</span>
+                    </div>
+                    <h3>¿Cuál de estos enlaces es más usable y accesible?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-11-0">
+                        <input type="radio" name="pregunta-11" id="p11o0" value="0">
+                        <label for="p11o0"><span class="codigo">&lt;a href=&#x27;contacto.html&#x27;&gt;Haz clic aquí&lt;/a&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-11-1">
+                        <input type="radio" name="pregunta-11" id="p11o1" value="1">
+                        <label for="p11o1"><span class="codigo">&lt;a href=&#x27;contacto.html&#x27;&gt;Ir a la página de contacto&lt;/a&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-11-2">
+                        <input type="radio" name="pregunta-11" id="p11o2" value="2">
+                        <label for="p11o2"><span class="codigo">&lt;a href=&#x27;contacto.html&#x27;&gt;Más&lt;/a&gt;</span></label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(11)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-11"></div>
+                </article>
+                <article class="pregunta" id="pregunta-12" data-correcta="1" data-explicacion="La etiqueta correcta para insertar imágenes es &lt;img&gt;. Normalmente se acompaña de los atributos src y alt.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 13</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3>¿Qué etiqueta se utiliza para insertar una imagen?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-12-0">
+                        <input type="radio" name="pregunta-12" id="p12o0" value="0">
+                        <label for="p12o0"><span class="codigo">&lt;image&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-12-1">
+                        <input type="radio" name="pregunta-12" id="p12o1" value="1">
+                        <label for="p12o1"><span class="codigo">&lt;img&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-12-2">
+                        <input type="radio" name="pregunta-12" id="p12o2" value="2">
+                        <label for="p12o2"><span class="codigo">&lt;picture-img&gt;</span></label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(12)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-12"></div>
+                </article>
+                <article class="pregunta" id="pregunta-13" data-correcta="0" data-explicacion="El atributo src indica la ruta del archivo de imagen que debe cargarse en la página.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 14</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3>¿Qué atributo indica la ruta o ubicación de una imagen?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-13-0">
+                        <input type="radio" name="pregunta-13" id="p13o0" value="0">
+                        <label for="p13o0">src</label>
+                    </div>
+                    <div class="opcion" id="opcion-13-1">
+                        <input type="radio" name="pregunta-13" id="p13o1" value="1">
+                        <label for="p13o1">href</label>
+                    </div>
+                    <div class="opcion" id="opcion-13-2">
+                        <input type="radio" name="pregunta-13" id="p13o2" value="2">
+                        <label for="p13o2">title</label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(13)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-13"></div>
+                </article>
+                <article class="pregunta" id="pregunta-14" data-correcta="1" data-explicacion="El atributo alt mejora la accesibilidad porque describe la imagen a personas que no pueden verla. También se muestra si la imagen no carga correctamente.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 15</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3>¿Para qué sirve el atributo alt en una imagen?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-14-0">
+                        <input type="radio" name="pregunta-14" id="p14o0" value="0">
+                        <label for="p14o0">Para cambiar el tamaño de la imagen.</label>
+                    </div>
+                    <div class="opcion" id="opcion-14-1">
+                        <input type="radio" name="pregunta-14" id="p14o1" value="1">
+                        <label for="p14o1">Para añadir un texto alternativo si la imagen no se carga o para lectores de pantalla.</label>
+                    </div>
+                    <div class="opcion" id="opcion-14-2">
+                        <input type="radio" name="pregunta-14" id="p14o2" value="2">
+                        <label for="p14o2">Para poner la imagen en negrita.</label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(14)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-14"></div>
+                </article>
+                <article class="pregunta" id="pregunta-15" data-correcta="2" data-explicacion="El texto alternativo debe ser descriptivo. Es mejor explicar qué aparece en la imagen que escribir simplemente &#x27;imagen&#x27;.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 16</span>
+                        <span class="nivel medio">Medio</span>
+                    </div>
+                    <h3>¿Cuál de estos ejemplos es más accesible?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-15-0">
+                        <input type="radio" name="pregunta-15" id="p15o0" value="0">
+                        <label for="p15o0"><span class="codigo">&lt;img src=&#x27;perro.jpg&#x27;&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-15-1">
+                        <input type="radio" name="pregunta-15" id="p15o1" value="1">
+                        <label for="p15o1"><span class="codigo">&lt;img src=&#x27;perro.jpg&#x27; alt=&#x27;imagen&#x27;&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-15-2">
+                        <input type="radio" name="pregunta-15" id="p15o2" value="2">
+                        <label for="p15o2"><span class="codigo">&lt;img src=&#x27;perro.jpg&#x27; alt=&#x27;Perro guía caminando junto a una persona&#x27;&gt;</span></label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(15)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-15"></div>
+                </article>
+                <article class="pregunta" id="pregunta-16" data-correcta="0" data-explicacion="HTML5 incorpora la etiqueta &lt;video&gt; para insertar vídeos directamente en una página web.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 17</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3>¿Qué etiqueta permite insertar vídeo en HTML5?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-16-0">
+                        <input type="radio" name="pregunta-16" id="p16o0" value="0">
+                        <label for="p16o0"><span class="codigo">&lt;video&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-16-1">
+                        <input type="radio" name="pregunta-16" id="p16o1" value="1">
+                        <label for="p16o1"><span class="codigo">&lt;movie&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-16-2">
+                        <input type="radio" name="pregunta-16" id="p16o2" value="2">
+                        <label for="p16o2"><span class="codigo">&lt;media&gt;</span></label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(16)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-16"></div>
+                </article>
+                <article class="pregunta" id="pregunta-17" data-correcta="1" data-explicacion="La etiqueta &lt;audio&gt; permite insertar archivos de sonido en una página web.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 18</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3>¿Qué etiqueta permite insertar audio en HTML5?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-17-0">
+                        <input type="radio" name="pregunta-17" id="p17o0" value="0">
+                        <label for="p17o0"><span class="codigo">&lt;sound&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-17-1">
+                        <input type="radio" name="pregunta-17" id="p17o1" value="1">
+                        <label for="p17o1"><span class="codigo">&lt;audio&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-17-2">
+                        <input type="radio" name="pregunta-17" id="p17o2" value="2">
+                        <label for="p17o2"><span class="codigo">&lt;mp3&gt;</span></label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(17)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-17"></div>
+                </article>
+                <article class="pregunta" id="pregunta-18" data-correcta="2" data-explicacion="Desde el punto de vista de la usabilidad, el usuario debe tener control sobre el contenido multimedia.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 19</span>
+                        <span class="nivel medio">Medio</span>
+                    </div>
+                    <h3>¿Cuál es una buena práctica al insertar audio o vídeo?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-18-0">
+                        <input type="radio" name="pregunta-18" id="p18o0" value="0">
+                        <label for="p18o0">Activar siempre la reproducción automática con sonido.</label>
+                    </div>
+                    <div class="opcion" id="opcion-18-1">
+                        <input type="radio" name="pregunta-18" id="p18o1" value="1">
+                        <label for="p18o1">Ocultar los controles para que la página parezca más limpia.</label>
+                    </div>
+                    <div class="opcion" id="opcion-18-2">
+                        <input type="radio" name="pregunta-18" id="p18o2" value="2">
+                        <label for="p18o2">Ofrecer controles para que el usuario pueda reproducir, pausar o detener el contenido.</label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(18)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-18"></div>
+                </article>
+                <article class="pregunta" id="pregunta-19" data-correcta="0" data-explicacion="Una etiqueta semántica comunica el significado del contenido. Por ejemplo, &lt;nav&gt; indica navegación y &lt;main&gt; indica contenido principal.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 20</span>
+                        <span class="nivel medio">Medio</span>
+                    </div>
+                    <h3>¿Qué significa que una etiqueta HTML sea semántica?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-19-0">
+                        <input type="radio" name="pregunta-19" id="p19o0" value="0">
+                        <label for="p19o0">Que tiene un significado sobre el tipo de contenido que contiene.</label>
+                    </div>
+                    <div class="opcion" id="opcion-19-1">
+                        <input type="radio" name="pregunta-19" id="p19o1" value="1">
+                        <label for="p19o1">Que solo sirve para cambiar colores.</label>
+                    </div>
+                    <div class="opcion" id="opcion-19-2">
+                        <input type="radio" name="pregunta-19" id="p19o2" value="2">
+                        <label for="p19o2">Que únicamente funciona con JavaScript.</label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(19)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-19"></div>
+                </article>
+                <article class="pregunta" id="pregunta-20" data-correcta="1" data-explicacion="La etiqueta &lt;nav&gt; se utiliza para agrupar enlaces importantes de navegación, como el menú principal de una web.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 21</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3>¿Qué etiqueta sería más adecuada para el menú principal de navegación?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-20-0">
+                        <input type="radio" name="pregunta-20" id="p20o0" value="0">
+                        <label for="p20o0"><span class="codigo">&lt;div&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-20-1">
+                        <input type="radio" name="pregunta-20" id="p20o1" value="1">
+                        <label for="p20o1"><span class="codigo">&lt;nav&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-20-2">
+                        <input type="radio" name="pregunta-20" id="p20o2" value="2">
+                        <label for="p20o2"><span class="codigo">&lt;span&gt;</span></label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(20)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-20"></div>
+                </article>
+                <article class="pregunta" id="pregunta-21" data-correcta="0" data-explicacion="La etiqueta &lt;main&gt; contiene el contenido principal de la página. Normalmente debe haber un único &lt;main&gt; por documento.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 22</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3>¿Qué etiqueta representa el contenido principal de una página?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-21-0">
+                        <input type="radio" name="pregunta-21" id="p21o0" value="0">
+                        <label for="p21o0"><span class="codigo">&lt;main&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-21-1">
+                        <input type="radio" name="pregunta-21" id="p21o1" value="1">
+                        <label for="p21o1"><span class="codigo">&lt;footer&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-21-2">
+                        <input type="radio" name="pregunta-21" id="p21o2" value="2">
+                        <label for="p21o2"><span class="codigo">&lt;aside&gt;</span></label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(21)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-21"></div>
+                </article>
+                <article class="pregunta" id="pregunta-22" data-correcta="1" data-explicacion="La etiqueta &lt;footer&gt; representa el pie de página. Puede incluir datos legales, contacto, enlaces secundarios o derechos de autor.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 23</span>
+                        <span class="nivel basico">Básico</span>
+                    </div>
+                    <h3>¿Qué etiqueta suele utilizarse para la parte final de una página con datos legales, contacto o enlaces secundarios?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-22-0">
+                        <input type="radio" name="pregunta-22" id="p22o0" value="0">
+                        <label for="p22o0"><span class="codigo">&lt;header&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-22-1">
+                        <input type="radio" name="pregunta-22" id="p22o1" value="1">
+                        <label for="p22o1"><span class="codigo">&lt;footer&gt;</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-22-2">
+                        <input type="radio" name="pregunta-22" id="p22o2" value="2">
+                        <label for="p22o2"><span class="codigo">&lt;section&gt;</span></label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(22)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-22"></div>
+                </article>
+                <article class="pregunta" id="pregunta-23" data-correcta="1" data-explicacion="Si un bloque representa una sección clara del contenido, &lt;section&gt; puede ser más adecuado que un &lt;div&gt; genérico.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 24</span>
+                        <span class="nivel medio">Medio</span>
+                    </div>
+                    <h3>¿Cuál sería una mejora semántica para un bloque independiente de contenido que tiene título y párrafos?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-23-0">
+                        <input type="radio" name="pregunta-23" id="p23o0" value="0">
+                        <label for="p23o0"><span class="codigo">Usar siempre &lt;span&gt; para todo el bloque.</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-23-1">
+                        <input type="radio" name="pregunta-23" id="p23o1" value="1">
+                        <label for="p23o1"><span class="codigo">Usar una etiqueta como &lt;section&gt; si representa una sección diferenciada.</span></label>
+                    </div>
+                    <div class="opcion" id="opcion-23-2">
+                        <input type="radio" name="pregunta-23" id="p23o2" value="2">
+                        <label for="p23o2">Eliminar el título para que haya menos código.</label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(23)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-23"></div>
+                </article>
+                <article class="pregunta" id="pregunta-24" data-correcta="1" data-explicacion="La accesibilidad busca que las páginas puedan ser utilizadas por todas las personas, independientemente de sus capacidades, dispositivos o circunstancias.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 25</span>
+                        <span class="nivel medio">Medio</span>
+                    </div>
+                    <h3>¿Qué es la accesibilidad web?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-24-0">
+                        <input type="radio" name="pregunta-24" id="p24o0" value="0">
+                        <label for="p24o0">Que una página tenga muchos efectos visuales.</label>
+                    </div>
+                    <div class="opcion" id="opcion-24-1">
+                        <input type="radio" name="pregunta-24" id="p24o1" value="1">
+                        <label for="p24o1">Que una página pueda ser utilizada por el mayor número posible de personas, incluidas personas con discapacidad.</label>
+                    </div>
+                    <div class="opcion" id="opcion-24-2">
+                        <input type="radio" name="pregunta-24" id="p24o2" value="2">
+                        <label for="p24o2">Que una página solo funcione en el navegador más moderno.</label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(24)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-24"></div>
+                </article>
+                <article class="pregunta" id="pregunta-25" data-correcta="0" data-explicacion="Los textos alternativos descriptivos ayudan a comprender las imágenes cuando no se pueden ver o cuando se navega con lector de pantalla.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 26</span>
+                        <span class="nivel medio">Medio</span>
+                    </div>
+                    <h3>¿Qué acción mejora la accesibilidad de una página?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-25-0">
+                        <input type="radio" name="pregunta-25" id="p25o0" value="0">
+                        <label for="p25o0">Usar textos alternativos descriptivos en las imágenes.</label>
+                    </div>
+                    <div class="opcion" id="opcion-25-1">
+                        <input type="radio" name="pregunta-25" id="p25o1" value="1">
+                        <label for="p25o1">Usar solo imágenes sin texto.</label>
+                    </div>
+                    <div class="opcion" id="opcion-25-2">
+                        <input type="radio" name="pregunta-25" id="p25o2" value="2">
+                        <label for="p25o2">Eliminar los encabezados para que la página sea más corta.</label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(25)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-25"></div>
+                </article>
+                <article class="pregunta" id="pregunta-26" data-correcta="0" data-explicacion="La usabilidad se relaciona con la facilidad de uso: navegación clara, textos comprensibles, botones reconocibles y tareas fáciles de completar.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 27</span>
+                        <span class="nivel medio">Medio</span>
+                    </div>
+                    <h3>¿Qué es la usabilidad web?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-26-0">
+                        <input type="radio" name="pregunta-26" id="p26o0" value="0">
+                        <label for="p26o0">La facilidad con la que una persona puede utilizar y entender una página web.</label>
+                    </div>
+                    <div class="opcion" id="opcion-26-1">
+                        <input type="radio" name="pregunta-26" id="p26o1" value="1">
+                        <label for="p26o1">La cantidad de colores que tiene una página.</label>
+                    </div>
+                    <div class="opcion" id="opcion-26-2">
+                        <input type="radio" name="pregunta-26" id="p26o2" value="2">
+                        <label for="p26o2">El número de imágenes que aparecen en pantalla.</label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(26)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-26"></div>
+                </article>
+                <article class="pregunta" id="pregunta-27" data-correcta="0" data-explicacion="Una página usable facilita que el usuario entienda dónde está, qué puede hacer y cómo completar una acción.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 28</span>
+                        <span class="nivel medio">Medio</span>
+                    </div>
+                    <h3>¿Cuál de estas páginas sería más usable?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-27-0">
+                        <input type="radio" name="pregunta-27" id="p27o0" value="0">
+                        <label for="p27o0">Una página con menús claros, textos comprensibles y botones fáciles de identificar.</label>
+                    </div>
+                    <div class="opcion" id="opcion-27-1">
+                        <input type="radio" name="pregunta-27" id="p27o1" value="1">
+                        <label for="p27o1">Una página con muchos enlaces sin explicar a dónde llevan.</label>
+                    </div>
+                    <div class="opcion" id="opcion-27-2">
+                        <input type="radio" name="pregunta-27" id="p27o2" value="2">
+                        <label for="p27o2">Una página con todo el texto en mayúsculas y sin separación visual.</label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(27)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-27"></div>
+                </article>
+                <article class="pregunta" id="pregunta-28" data-correcta="0" data-explicacion="Los campos de formulario deben estar claramente identificados. Las etiquetas ayudan a todos los usuarios y son especialmente importantes para la accesibilidad.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 29</span>
+                        <span class="nivel avanzado">Avanzado</span>
+                    </div>
+                    <h3>Un formulario tiene un campo para escribir el correo electrónico, pero no tiene etiqueta visible. ¿Qué problema puede generar?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-28-0">
+                        <input type="radio" name="pregunta-28" id="p28o0" value="0">
+                        <label for="p28o0">Puede dificultar que el usuario sepa qué debe escribir en ese campo.</label>
+                    </div>
+                    <div class="opcion" id="opcion-28-1">
+                        <input type="radio" name="pregunta-28" id="p28o1" value="1">
+                        <label for="p28o1">Hace que la página pese menos.</label>
+                    </div>
+                    <div class="opcion" id="opcion-28-2">
+                        <input type="radio" name="pregunta-28" id="p28o2" value="2">
+                        <label for="p28o2">Mejora la accesibilidad porque hay menos texto.</label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(28)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-28"></div>
+                </article>
+                <article class="pregunta" id="pregunta-29" data-correcta="1" data-explicacion="Una página debe probarse en diferentes navegadores y tamaños de pantalla para comprobar que funciona correctamente y ofrece una buena experiencia.">
+                    <div class="pregunta-header">
+                        <span class="numero">Pregunta 30</span>
+                        <span class="nivel avanzado">Avanzado</span>
+                    </div>
+                    <h3>¿Cuál es una buena práctica general al crear una página web para diferentes usuarios y dispositivos?</h3>
+                    <div class="opciones">
+                        
+                    <div class="opcion" id="opcion-29-0">
+                        <input type="radio" name="pregunta-29" id="p29o0" value="0">
+                        <label for="p29o0">Diseñarla solo para la pantalla del ordenador del creador.</label>
+                    </div>
+                    <div class="opcion" id="opcion-29-1">
+                        <input type="radio" name="pregunta-29" id="p29o1" value="1">
+                        <label for="p29o1">Probarla en distintos tamaños de pantalla y navegadores.</label>
+                    </div>
+                    <div class="opcion" id="opcion-29-2">
+                        <input type="radio" name="pregunta-29" id="p29o2" value="2">
+                        <label for="p29o2">Usar siempre texto muy pequeño para que quepa más información.</label>
+                    </div>
+                    </div>
+                    <button class="btn-pregunta" type="button" onclick="corregirPregunta(29)">Corregir pregunta</button>
+                    <div class="feedback" id="feedback-29"></div>
+                </article>
+        </section>
+        <section class="resultado-final" id="resultadoFinal">
+            <h2>Resultado final</h2>
+            <div class="puntuacion" id="puntuacionFinal">0/30</div>
+            <p class="mensaje-final" id="mensajeFinal"></p>
+            <button class="btn-principal" type="button" onclick="reiniciarQuiz()">Volver a intentarlo</button>
+        </section>
+    </main>
+    <script>
+const totalPreguntas = document.querySelectorAll('.pregunta').length;
+const progreso = document.getElementById('progreso');
+const textoProgreso = document.getElementById('textoProgreso');
+
+function actualizarProgreso() {
+    let respondidas = 0;
+    document.querySelectorAll('.pregunta').forEach((pregunta, indice) => {
+        const seleccionada = pregunta.querySelector(`input[name="pregunta-${indice}"]:checked`);
+        if (seleccionada) respondidas++;
+    });
+    const porcentaje = (respondidas / totalPreguntas) * 100;
+    progreso.style.width = porcentaje + '%';
+    textoProgreso.textContent = `Has respondido ${respondidas} de ${totalPreguntas} preguntas.`;
+}
+
+document.querySelectorAll('input[type="radio"]').forEach(input => {
+    input.addEventListener('change', actualizarProgreso);
+});
+
+function limpiarEstilosOpciones(indice) {
+    document.querySelectorAll(`#pregunta-${indice} .opcion`).forEach(opcion => {
+        opcion.classList.remove('correcta', 'incorrecta');
+    });
+}
+
+function corregirPregunta(indice) {
+    const tarjeta = document.getElementById(`pregunta-${indice}`);
+    const correcta = Number(tarjeta.dataset.correcta);
+    const explicacion = tarjeta.dataset.explicacion;
+    const seleccionada = tarjeta.querySelector(`input[name="pregunta-${indice}"]:checked`);
+    const feedback = document.getElementById(`feedback-${indice}`);
+
+    limpiarEstilosOpciones(indice);
+    feedback.innerHTML = '';
+
+    if (!seleccionada) {
+        feedback.className = 'feedback incorrecto';
+        const titulo = document.createElement('strong');
+        titulo.textContent = 'No has seleccionado ninguna respuesta.';
+        const detalle = document.createElement('div');
+        detalle.className = 'explicacion';
+        detalle.textContent = 'Elige una opción antes de corregir esta pregunta.';
+        feedback.append(titulo, detalle);
+        return false;
+    }
+
+    const respuestaUsuario = Number(seleccionada.value);
+    const opcionCorrecta = document.getElementById(`opcion-${indice}-${correcta}`);
+    opcionCorrecta.classList.add('correcta');
+
+    const titulo = document.createElement('strong');
+    const detalle = document.createElement('div');
+    detalle.className = 'explicacion';
+
+    if (respuestaUsuario === correcta) {
+        feedback.className = 'feedback correcto';
+        titulo.textContent = 'Correcto.';
+        detalle.textContent = explicacion;
+        feedback.append(titulo, detalle);
+        return true;
+    }
+
+    const opcionUsuario = document.getElementById(`opcion-${indice}-${respuestaUsuario}`);
+    opcionUsuario.classList.add('incorrecta');
+    feedback.className = 'feedback incorrecto';
+    titulo.textContent = 'Incorrecto.';
+
+    const textoUsuario = opcionUsuario.querySelector('label').textContent;
+    const textoCorrecto = opcionCorrecta.querySelector('label').textContent;
+    detalle.textContent = `Tu respuesta fue: ${textoUsuario}. La respuesta correcta era: ${textoCorrecto}. ${explicacion}`;
+    feedback.append(titulo, detalle);
+    return false;
+}
+
+function corregirQuiz() {
+    let aciertos = 0;
+    document.querySelectorAll('.pregunta').forEach((pregunta, indice) => {
+        if (corregirPregunta(indice)) aciertos++;
+    });
+    mostrarResultado(aciertos);
+}
+
+function mostrarResultado(aciertos) {
+    const resultadoFinal = document.getElementById('resultadoFinal');
+    const puntuacionFinal = document.getElementById('puntuacionFinal');
+    const mensajeFinal = document.getElementById('mensajeFinal');
+
+    puntuacionFinal.textContent = `${aciertos}/${totalPreguntas}`;
+
+    let mensaje = '';
+    if (aciertos <= 14) {
+        mensaje = 'Necesitas repasar los conceptos básicos de HTML, estructura del documento, enlaces, imágenes, accesibilidad y usabilidad. Revisa las explicaciones y vuelve a intentarlo.';
+    } else if (aciertos <= 22) {
+        mensaje = 'Tienes una base aceptable, pero conviene reforzar HTML semántico, buenas prácticas con imágenes, formularios y accesibilidad.';
+    } else if (aciertos <= 27) {
+        mensaje = 'Buen resultado. Dominas la mayoría de contenidos principales de la UF1302. Revisa las preguntas falladas para afianzar conceptos.';
+    } else {
+        mensaje = 'Excelente resultado. Tienes un dominio muy alto de los conceptos básicos de HTML, accesibilidad y usabilidad.';
+    }
+
+    mensajeFinal.textContent = mensaje;
+    resultadoFinal.classList.add('visible');
+    resultadoFinal.scrollIntoView({ behavior: 'smooth' });
+}
+
+function reiniciarQuiz() {
+    document.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
+    document.querySelectorAll('.feedback').forEach(feedback => {
+        feedback.className = 'feedback';
+        feedback.innerHTML = '';
+    });
+    document.querySelectorAll('.opcion').forEach(opcion => opcion.classList.remove('correcta', 'incorrecta'));
+    document.getElementById('resultadoFinal').classList.remove('visible');
+    progreso.style.width = '0%';
+    textoProgreso.textContent = `Has respondido 0 de ${totalPreguntas} preguntas.`;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
