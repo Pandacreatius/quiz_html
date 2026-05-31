@@ -5,7 +5,7 @@
     <title>Quiz UF1302 - HTML, Accesibilidad y Usabilidad</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-:root{--fuente-base:Arial,Helvetica,sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--fuente-base);background:#f4f7fb;color:#1f2937}.hero{background:linear-gradient(135deg,#111827,#2563eb);color:#fff;padding:64px 20px;text-align:center}.hero-contenido{max-width:1100px;margin:0 auto}.etiqueta{display:inline-block;background:rgba(255,255,255,.16);color:#dbeafe;padding:8px 16px;border-radius:999px;font-size:14px;margin-bottom:20px}h1{font-size:46px;margin:0 0 18px;line-height:1.1}.hero p{font-size:19px;max-width:780px;margin:0 auto 30px;line-height:1.6;color:#e5e7eb}.hero-datos{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:30px}.dato{background:rgba(255,255,255,.13);padding:16px 24px;border-radius:18px;min-width:160px}.dato strong{display:block;font-size:30px}.dato span{font-size:14px;color:#dbeafe}.contenedor{width:92%;max-width:1150px;margin:40px auto}.panel-info{background:#fff;padding:28px;border-radius:24px;box-shadow:0 18px 40px rgba(15,23,42,.08);margin-bottom:32px;border:1px solid #e5e7eb}.panel-info h2{margin-top:0;color:#111827;font-size:28px}.panel-info p{line-height:1.6;color:#4b5563;font-size:17px}.acciones-superiores{display:flex;gap:15px;flex-wrap:wrap;margin-top:22px}button{border:none;cursor:pointer;font-size:16px;border-radius:14px;padding:13px 22px;transition:.2s;font-family:inherit}.btn-principal{background:#2563eb;color:#fff}.btn-principal:hover{background:#1d4ed8;transform:translateY(-2px)}.btn-secundario{background:#e5e7eb;color:#111827}.btn-secundario:hover{background:#d1d5db;transform:translateY(-2px)}.btn-pregunta{background:#111827;color:#fff;margin-top:18px}.btn-pregunta:hover{background:#374151;transform:translateY(-2px)}.barra-progreso{background:#e5e7eb;border-radius:999px;overflow:hidden;height:15px;margin:26px 0 10px}.progreso{background:linear-gradient(90deg,#2563eb,#22c55e);width:0%;height:100%;transition:width .4s}.texto-progreso{font-size:15px;color:#6b7280}.quiz{display:grid;gap:26px}.pregunta{background:#fff;border-radius:24px;padding:28px;box-shadow:0 18px 40px rgba(15,23,42,.08);border:1px solid #e5e7eb}.pregunta-header{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:18px}.numero{background:#eff6ff;color:#2563eb;padding:8px 15px;border-radius:999px;font-weight:bold;font-size:14px;white-space:nowrap}.nivel{padding:8px 15px;border-radius:999px;font-size:14px;font-weight:bold;white-space:nowrap}.nivel.basico{background:#dcfce7;color:#166534}.nivel.medio{background:#fef3c7;color:#92400e}.nivel.avanzado{background:#fee2e2;color:#991b1b}.pregunta h3{margin:0;font-size:22px;line-height:1.45;font-family:var(--fuente-base)}.pregunta h3 .codigo{font-family:inherit}.opciones{display:grid;gap:13px;margin-top:22px}.opcion{border:2px solid #e5e7eb;border-radius:17px;padding:16px;background:#f9fafb;display:flex;gap:12px;align-items:flex-start;transition:.2s}.opcion:hover{border-color:#93c5fd;background:#eff6ff}.opcion input{margin-top:5px;transform:scale(1.15);flex:0 0 auto}.opcion label{cursor:pointer;line-height:1.5;width:100%;font-size:16px;color:#1f2937}.opcion label .codigo{font-family:inherit}.opcion.correcta{background:#dcfce7;border-color:#22c55e}.opcion.incorrecta{background:#fee2e2;border-color:#ef4444}.feedback{display:none;margin-top:20px;padding:18px;border-radius:17px;line-height:1.6;font-size:16px}.feedback.correcto{display:block;background:#dcfce7;border-left:7px solid #22c55e;color:#14532d}.feedback.incorrecto{display:block;background:#fee2e2;border-left:7px solid #ef4444;color:#7f1d1d}.feedback strong{font-weight:700}.explicacion{margin-top:10px;color:#374151}.resultado-final{display:none;background:#fff;padding:34px;border-radius:26px;box-shadow:0 18px 40px rgba(15,23,42,.08);margin:42px 0;border:1px solid #e5e7eb;text-align:center}.resultado-final.visible{display:block}.resultado-final h2{font-size:36px;margin-bottom:10px}.puntuacion{font-size:60px;font-weight:bold;color:#2563eb;margin:20px 0}.mensaje-final{font-size:18px;color:#4b5563;line-height:1.6;max-width:760px;margin:0 auto 28px}.codigo{font-family:Consolas,Menlo,Monaco,monospace;background:#f3f4f6;border:1px solid #e5e7eb;border-radius:8px;padding:2px 6px;white-space:normal}@media(max-width:900px){h1{font-size:38px}.hero{padding:52px 20px}.hero p{font-size:18px}.contenedor{width:94%}.pregunta{padding:24px}.pregunta h3{font-size:20px}}@media(max-width:600px){.hero{padding:42px 16px}h1{font-size:30px}.hero p{font-size:16px}.dato{width:100%;min-width:auto}.contenedor{width:94%;margin:24px auto}.panel-info{padding:20px;border-radius:20px}.panel-info h2{font-size:23px}.panel-info p{font-size:16px}.acciones-superiores{flex-direction:column}button{width:100%;font-size:16px;padding:14px}.pregunta{padding:20px;border-radius:20px}.pregunta-header{flex-direction:column;gap:10px}.pregunta h3{font-size:18px}.opcion{padding:14px}.opcion label{font-size:15px}.feedback{font-size:15px}.resultado-final{padding:24px}.resultado-final h2{font-size:28px}.puntuacion{font-size:44px}.mensaje-final{font-size:16px}}@media(min-width:1300px){.contenedor{max-width:1250px}.pregunta h3{font-size:24px}.opcion label{font-size:17px}}
+:root{--fuente-base:Arial,Helvetica,sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--fuente-base);background:#f4f7fb;color:#1f2937}.hero{background:linear-gradient(135deg,#111827,#2563eb);color:#fff;padding:64px 20px;text-align:center}.hero-contenido{max-width:1100px;margin:0 auto}.etiqueta{display:inline-block;background:rgba(255,255,255,.16);color:#dbeafe;padding:8px 16px;border-radius:999px;font-size:14px;margin-bottom:20px}h1{font-size:46px;margin:0 0 18px;line-height:1.1}.hero p{font-size:19px;max-width:780px;margin:0 auto 30px;line-height:1.6;color:#e5e7eb}.hero-datos{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:30px}.dato{background:rgba(255,255,255,.13);padding:16px 24px;border-radius:18px;min-width:160px}.dato strong{display:block;font-size:30px}.dato span{font-size:14px;color:#dbeafe}.contenedor{width:92%;max-width:1150px;margin:40px auto}.panel-info{background:#fff;padding:28px;border-radius:24px;box-shadow:0 18px 40px rgba(15,23,42,.08);margin-bottom:32px;border:1px solid #e5e7eb}.panel-info h2{margin-top:0;color:#111827;font-size:28px}.panel-info p{line-height:1.6;color:#4b5563;font-size:17px}.resumen-superior{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:24px;align-items:center}.panel-metricas{background:linear-gradient(180deg,#f8fbff,#eef4ff);border:1px solid #dbeafe;border-radius:24px;padding:22px}.grafico-wrap{display:flex;align-items:center;gap:22px;flex-wrap:wrap}.grafico-circular{width:170px;height:170px;border-radius:50%;background:conic-gradient(#22c55e 0deg,#22c55e 0deg,#ef4444 0deg,#ef4444 0deg,#e5e7eb 0deg 360deg);display:grid;place-items:center;box-shadow:inset 0 0 0 10px rgba(255,255,255,.55);transition:background .35s ease}.grafico-centro{width:108px;height:108px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 12px 24px rgba(37,99,235,.12)}.grafico-centro strong{font-size:34px;color:#111827;line-height:1}.grafico-centro span{font-size:13px;color:#6b7280;max-width:68px;line-height:1.2}.leyenda-metricas{display:grid;gap:12px;flex:1;min-width:200px}.dato-metrica{display:flex;justify-content:space-between;align-items:center;background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:14px 16px}.dato-metrica .etiqueta-metrica{display:flex;align-items:center;gap:10px;font-weight:700;color:#374151}.punto{width:12px;height:12px;border-radius:50%}.punto.aciertos{background:#22c55e}.punto.fallos{background:#ef4444}.punto.pendientes{background:#cbd5e1}.valor-metrica{font-size:22px;font-weight:700;color:#111827}.mensaje-metricas{margin:16px 0 0;font-size:15px;color:#475569}.acciones-superiores{display:flex;gap:15px;flex-wrap:wrap;margin-top:22px}button{border:none;cursor:pointer;font-size:16px;border-radius:14px;padding:13px 22px;transition:.2s;font-family:inherit}.btn-principal{background:#2563eb;color:#fff}.btn-principal:hover{background:#1d4ed8;transform:translateY(-2px)}.btn-secundario{background:#e5e7eb;color:#111827}.btn-secundario:hover{background:#d1d5db;transform:translateY(-2px)}.btn-pregunta{background:#111827;color:#fff;margin-top:18px}.btn-pregunta:hover{background:#374151;transform:translateY(-2px)}.btn-modal{background:#111827;color:#fff;min-width:180px}.btn-modal:hover{background:#1f2937;transform:translateY(-2px)}.barra-progreso{background:#e5e7eb;border-radius:999px;overflow:hidden;height:15px;margin:26px 0 10px}.progreso{background:linear-gradient(90deg,#2563eb,#22c55e);width:0%;height:100%;transition:width .4s}.texto-progreso{font-size:15px;color:#6b7280}.quiz{display:grid;gap:26px}.pregunta{background:#fff;border-radius:24px;padding:28px;box-shadow:0 18px 40px rgba(15,23,42,.08);border:1px solid #e5e7eb}.pregunta-header{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:18px}.numero{background:#eff6ff;color:#2563eb;padding:8px 15px;border-radius:999px;font-weight:bold;font-size:14px;white-space:nowrap}.nivel{padding:8px 15px;border-radius:999px;font-size:14px;font-weight:bold;white-space:nowrap}.nivel.basico{background:#dcfce7;color:#166534}.nivel.medio{background:#fef3c7;color:#92400e}.nivel.avanzado{background:#fee2e2;color:#991b1b}.pregunta h3{margin:0;font-size:22px;line-height:1.45;font-family:var(--fuente-base)}.pregunta h3 .codigo{font-family:inherit}.opciones{display:grid;gap:13px;margin-top:22px}.opcion{border:2px solid #e5e7eb;border-radius:17px;padding:16px;background:#f9fafb;display:flex;gap:12px;align-items:flex-start;transition:.2s}.opcion:hover{border-color:#93c5fd;background:#eff6ff}.opcion input{margin-top:5px;transform:scale(1.15);flex:0 0 auto}.opcion label{cursor:pointer;line-height:1.5;width:100%;font-size:16px;color:#1f2937}.opcion label .codigo{font-family:inherit}.opcion.correcta{background:#dcfce7;border-color:#22c55e}.opcion.incorrecta{background:#fee2e2;border-color:#ef4444}.feedback{display:none;margin-top:20px;padding:18px;border-radius:17px;line-height:1.6;font-size:16px}.feedback.correcto{display:block;background:#dcfce7;border-left:7px solid #22c55e;color:#14532d}.feedback.incorrecto{display:block;background:#fee2e2;border-left:7px solid #ef4444;color:#7f1d1d}.feedback strong{font-weight:700}.explicacion{margin-top:10px;color:#374151}.resultado-final{display:none;background:#fff;padding:34px;border-radius:26px;box-shadow:0 18px 40px rgba(15,23,42,.08);margin:42px 0;border:1px solid #e5e7eb;text-align:center}.resultado-final.visible{display:block}.resultado-final h2{font-size:36px;margin-bottom:10px}.puntuacion{font-size:60px;font-weight:bold;color:#2563eb;margin:20px 0}.mensaje-final{font-size:18px;color:#4b5563;line-height:1.6;max-width:760px;margin:0 auto 28px}.modal{position:fixed;inset:0;background:rgba(15,23,42,.5);display:none;align-items:center;justify-content:center;padding:20px;z-index:1000}.modal.visible{display:flex}.modal-contenido{width:min(100%,520px);background:#fff;border-radius:28px;padding:30px;box-shadow:0 24px 60px rgba(15,23,42,.28);text-align:center;border:1px solid #e5e7eb}.modal-tipo{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;font-size:14px;font-weight:700;margin-bottom:18px}.modal-tipo.correcto{background:#dcfce7;color:#166534}.modal-tipo.incorrecto{background:#fee2e2;color:#991b1b}.modal-contenido h3{margin:0 0 12px;font-size:30px;color:#111827}.modal-contenido p{margin:0 0 24px;color:#4b5563;font-size:18px;line-height:1.6}.codigo{font-family:Consolas,Menlo,Monaco,monospace;background:#f3f4f6;border:1px solid #e5e7eb;border-radius:8px;padding:2px 6px;white-space:normal}@media(max-width:900px){h1{font-size:38px}.hero{padding:52px 20px}.hero p{font-size:18px}.contenedor{width:94%}.resumen-superior{grid-template-columns:1fr}.panel-metricas{order:-1}.pregunta{padding:24px}.pregunta h3{font-size:20px}}@media(max-width:600px){.hero{padding:42px 16px}h1{font-size:30px}.hero p{font-size:16px}.dato{width:100%;min-width:auto}.contenedor{width:94%;margin:24px auto}.panel-info{padding:20px;border-radius:20px}.panel-info h2{font-size:23px}.panel-info p{font-size:16px}.grafico-wrap{justify-content:center}.grafico-circular{width:150px;height:150px}.grafico-centro{width:96px;height:96px}.grafico-centro strong{font-size:28px}.acciones-superiores{flex-direction:column}button{width:100%;font-size:16px;padding:14px}.pregunta{padding:20px;border-radius:20px}.pregunta-header{flex-direction:column;gap:10px}.pregunta h3{font-size:18px}.opcion{padding:14px}.opcion label{font-size:15px}.feedback{font-size:15px}.resultado-final{padding:24px}.resultado-final h2{font-size:28px}.puntuacion{font-size:44px}.mensaje-final{font-size:16px}.modal-contenido{padding:24px;border-radius:22px}.modal-contenido h3{font-size:25px}.modal-contenido p{font-size:16px}}@media(min-width:1300px){.contenedor{max-width:1250px}.pregunta h3{font-size:24px}.opcion label{font-size:17px}}
 </style>
 </head>
 <body>
@@ -23,10 +23,39 @@
     </header>
     <main class="contenedor">
         <section class="panel-info">
-            <h2>Instrucciones</h2>
-            <p>Selecciona una respuesta y pulsa <strong>Corregir pregunta</strong>. La aplicación te dirá si has acertado y te mostrará una explicación. Al final puedes pulsar <strong>Corregir todo el quiz</strong> para obtener la puntuación final.</p>
-            <div class="barra-progreso"><div class="progreso" id="progreso"></div></div>
-            <p class="texto-progreso" id="textoProgreso">Has respondido 0 de 30 preguntas.</p>
+            <div class="resumen-superior">
+                <div>
+                    <h2>Instrucciones</h2>
+                    <p>Selecciona una respuesta y pulsa <strong>Corregir pregunta</strong>. La aplicación te dirá si has acertado y te mostrará una explicación. Al final puedes pulsar <strong>Corregir todo el quiz</strong> para obtener la puntuación final.</p>
+                    <div class="barra-progreso"><div class="progreso" id="progreso"></div></div>
+                    <p class="texto-progreso" id="textoProgreso">Has respondido 0 de 30 preguntas.</p>
+                </div>
+                <aside class="panel-metricas" aria-label="Resumen de respuestas">
+                    <div class="grafico-wrap">
+                        <div class="grafico-circular" id="graficoCircular" aria-hidden="true">
+                            <div class="grafico-centro">
+                                <strong id="porcentajeGrafico">0%</strong>
+                                <span>avance real</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-metricas">
+                            <div class="dato-metrica">
+                                <span class="etiqueta-metrica"><span class="punto aciertos"></span>Aciertos</span>
+                                <strong class="valor-metrica" id="totalAciertos">0</strong>
+                            </div>
+                            <div class="dato-metrica">
+                                <span class="etiqueta-metrica"><span class="punto fallos"></span>Fallos</span>
+                                <strong class="valor-metrica" id="totalFallos">0</strong>
+                            </div>
+                            <div class="dato-metrica">
+                                <span class="etiqueta-metrica"><span class="punto pendientes"></span>Pendientes</span>
+                                <strong class="valor-metrica" id="totalPendientes">30</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mensaje-metricas" id="mensajeMetricas">Empieza el quiz y verás aquí tu evolución con aciertos y fallos.</p>
+                </aside>
+            </div>
             <div class="acciones-superiores">
                 <button class="btn-principal" type="button" onclick="corregirQuiz()">Corregir todo el quiz</button>
                 <button class="btn-secundario" type="button" onclick="reiniciarQuiz()">Reiniciar</button>
@@ -762,10 +791,123 @@
             <button class="btn-principal" type="button" onclick="reiniciarQuiz()">Volver a intentarlo</button>
         </section>
     </main>
+    <div class="modal" id="modalMotivacion" role="dialog" aria-modal="true" aria-labelledby="tituloModal" aria-describedby="textoModal">
+        <div class="modal-contenido">
+            <span class="modal-tipo" id="tipoModal">Progreso</span>
+            <h3 id="tituloModal">Sigue así</h3>
+            <p id="textoModal">Cada intento cuenta para aprender.</p>
+            <button class="btn-modal" type="button" id="cerrarModal">Cerrar</button>
+        </div>
+    </div>
     <script>
 const totalPreguntas = document.querySelectorAll('.pregunta').length;
 const progreso = document.getElementById('progreso');
 const textoProgreso = document.getElementById('textoProgreso');
+const graficoCircular = document.getElementById('graficoCircular');
+const porcentajeGrafico = document.getElementById('porcentajeGrafico');
+const totalAciertosEl = document.getElementById('totalAciertos');
+const totalFallosEl = document.getElementById('totalFallos');
+const totalPendientesEl = document.getElementById('totalPendientes');
+const mensajeMetricas = document.getElementById('mensajeMetricas');
+const modalMotivacion = document.getElementById('modalMotivacion');
+const tipoModal = document.getElementById('tipoModal');
+const tituloModal = document.getElementById('tituloModal');
+const textoModal = document.getElementById('textoModal');
+const cerrarModal = document.getElementById('cerrarModal');
+const estadoPreguntas = Array(totalPreguntas).fill(null);
+const mensajesAcierto = [
+    'Has arrancado con fuerza. Se nota que entiendes la base de HTML.',
+    'Muy bien visto. Vas leyendo la estructura web con seguridad.',
+    'Respuesta impecable. Estás conectando bien los conceptos clave.',
+    'Gran trabajo. Dominas cada vez mejor las etiquetas esenciales.',
+    'Acierto total. Tu criterio para elegir la etiqueta adecuada va fino.',
+    'Excelente. Estás asentando muy bien el lenguaje de marcas.',
+    'Muy buen ojo. La jerarquía del contenido la tienes bien encaminada.',
+    'Perfecto. Avanzas con orden y cada decisión suma.',
+    'Buen acierto. Vas construyendo una base sólida pregunta a pregunta.',
+    'Muy bien. Ya se nota soltura con los elementos básicos de HTML.',
+    'Respuesta correcta. Tu comprensión del contenido sigue creciendo.',
+    'Estupendo. Estás aplicando buenas prácticas con bastante seguridad.',
+    'Buen trabajo. Reconoces las etiquetas adecuadas sin perder el foco.',
+    'Muy buena respuesta. Mantienes un ritmo de aprendizaje excelente.',
+    'Acierto claro. Vas integrando la lógica del documento HTML.',
+    'Excelente decisión. Tus respuestas muestran atención y criterio.',
+    'Muy bien resuelta. La parte multimedia la llevas con confianza.',
+    'Gran avance. Cada acierto refuerza tus fundamentos web.',
+    'Perfecto. Estás respondiendo con mucha solidez.',
+    'Muy bien. La semántica web te está saliendo cada vez mejor.',
+    'Respuesta redonda. Tienes buen dominio de los elementos principales.',
+    'Acertaste. Se nota que comprendes la estructura del contenido.',
+    'Muy buen trabajo. Estás afinando muy bien los detalles.',
+    'Excelente. Tu lectura del HTML semántico va por muy buen camino.',
+    'Acierto merecido. La accesibilidad empieza a salirte natural.',
+    'Muy bien visto. Esa mirada accesible suma muchísimo.',
+    'Buen trabajo. Estás entendiendo la usabilidad con claridad.',
+    'Respuesta correcta. Tu criterio de diseño usable va madurando.',
+    'Gran acierto. Estás pensando como una persona que construye para todos.',
+    'Cierre brillante. Has rematado esta pregunta con mucha solvencia.'
+];
+const mensajesFallo = [
+    'Nada grave. Esta pregunta te ayuda a recordar para qué sirve HTML dentro de una web.',
+    'Buen intento. Revisa la etiqueta principal del documento y lo verás más claro.',
+    'Vas bien encaminado. Diferenciar las partes visibles del documento lleva práctica.',
+    'No pasa nada. Esta duda es muy útil para fijar el papel de cada etiqueta.',
+    'Sigue adelante. Equivocarse aquí también ayuda a afianzar la estructura básica.',
+    'Buen intento. Cada error te acerca a reconocer mejor las etiquetas reales de HTML.',
+    'Ánimo. La jerarquía de encabezados se domina repasando la lógica del contenido.',
+    'Tranquilidad. Las listas se interiorizan rápido cuando ves varios ejemplos.',
+    'Buen paso igualmente. Identificar cada elemento de lista es cuestión de práctica.',
+    'Sigue así. Los enlaces se vuelven muy intuitivos en cuanto repites un par de casos.',
+    'No te frenes. Esta pregunta sirve para reforzar cómo se organiza la información.',
+    'Buen intento. Elegir enlaces claros es una habilidad que mejora muy rápido.',
+    'Ánimo. Las etiquetas de imagen se consolidan en cuanto repases un par de ejemplos.',
+    'No pasa nada. La accesibilidad se aprende mejor precisamente corrigiendo dudas así.',
+    'Sigue sumando intentos. Entender el texto alternativo es clave y se puede reforzar.',
+    'Buen esfuerzo. La descripción útil de imágenes se entrena con práctica.',
+    'Tranquilo. El contenido multimedia tiene varios matices y es normal fallar alguno.',
+    'Ánimo, vas avanzando. Esta parte se fija muy bien al contrastar ejemplos.',
+    'Buen intento. Dar control al usuario es una idea central de usabilidad.',
+    'Nada grave. La semántica web cuesta un poco al principio y luego encaja sola.',
+    'Sigue adelante. Estas etiquetas se dominan rápido al verlas en contexto.',
+    'Buen intento. Estás muy cerca de interiorizar la estructura principal de la página.',
+    'Ánimo. Cada corrección te ayuda a distinguir mejor el papel de cada bloque.',
+    'No pasa nada. Elegir una etiqueta semántica correcta requiere entrenamiento.',
+    'Buen intento. La accesibilidad se construye paso a paso y vas en ello.',
+    'Sigue así. Esta pregunta ayuda mucho a pensar en personas usuarias reales.',
+    'Ánimo. La usabilidad mejora justo cuando detectamos este tipo de detalles.',
+    'Buen esfuerzo. Pensar la experiencia del usuario lleva práctica y observación.',
+    'No te desanimes. Los formularios accesibles se dominan repasando ejemplos claros.',
+    'Buen cierre igualmente. Probar una web en distintos contextos se interioriza con uso.'
+];
+
+function obtenerResumenEstados() {
+    const aciertos = estadoPreguntas.filter(estado => estado === true).length;
+    const fallos = estadoPreguntas.filter(estado => estado === false).length;
+    const pendientes = totalPreguntas - aciertos - fallos;
+    return { aciertos, fallos, pendientes };
+}
+
+function actualizarGrafico() {
+    const { aciertos, fallos, pendientes } = obtenerResumenEstados();
+    const gradosAcierto = (aciertos / totalPreguntas) * 360;
+    const gradosFallo = (fallos / totalPreguntas) * 360;
+    const avanceReal = aciertos + fallos;
+    const porcentaje = Math.round((avanceReal / totalPreguntas) * 100);
+
+    graficoCircular.style.background = `conic-gradient(#22c55e 0deg ${gradosAcierto}deg,#ef4444 ${gradosAcierto}deg ${gradosAcierto + gradosFallo}deg,#e5e7eb ${gradosAcierto + gradosFallo}deg 360deg)`;
+    porcentajeGrafico.textContent = `${porcentaje}%`;
+    totalAciertosEl.textContent = aciertos;
+    totalFallosEl.textContent = fallos;
+    totalPendientesEl.textContent = pendientes;
+
+    if (avanceReal === 0) {
+        mensajeMetricas.textContent = 'Empieza el quiz y verás aquí tu evolución con aciertos y fallos.';
+    } else if (pendientes === 0) {
+        mensajeMetricas.textContent = `Quiz completado: ${aciertos} aciertos y ${fallos} fallos. Buen momento para revisar tus explicaciones.`;
+    } else {
+        mensajeMetricas.textContent = `Llevas ${aciertos} aciertos y ${fallos} fallos. Te quedan ${pendientes} preguntas por corregir.`;
+    }
+}
 
 function actualizarProgreso() {
     let respondidas = 0;
@@ -778,8 +920,31 @@ function actualizarProgreso() {
     textoProgreso.textContent = `Has respondido ${respondidas} de ${totalPreguntas} preguntas.`;
 }
 
+function abrirModal(esCorrecta, indice) {
+    tipoModal.textContent = esCorrecta ? 'Respuesta acertada' : 'Sigue intentándolo';
+    tipoModal.className = `modal-tipo ${esCorrecta ? 'correcto' : 'incorrecto'}`;
+    tituloModal.textContent = esCorrecta ? 'Muy bien hecho' : 'Buen intento';
+    textoModal.textContent = esCorrecta ? mensajesAcierto[indice] : mensajesFallo[indice];
+    modalMotivacion.classList.add('visible');
+    cerrarModal.focus();
+}
+
+function cerrarModalMotivacion() {
+    modalMotivacion.classList.remove('visible');
+}
+
 document.querySelectorAll('input[type="radio"]').forEach(input => {
     input.addEventListener('change', actualizarProgreso);
+});
+
+cerrarModal.addEventListener('click', cerrarModalMotivacion);
+modalMotivacion.addEventListener('click', evento => {
+    if (evento.target === modalMotivacion) cerrarModalMotivacion();
+});
+document.addEventListener('keydown', evento => {
+    if (evento.key === 'Escape' && modalMotivacion.classList.contains('visible')) {
+        cerrarModalMotivacion();
+    }
 });
 
 function limpiarEstilosOpciones(indice) {
@@ -788,7 +953,7 @@ function limpiarEstilosOpciones(indice) {
     });
 }
 
-function corregirPregunta(indice) {
+function corregirPregunta(indice, mostrarModal = true) {
     const tarjeta = document.getElementById(`pregunta-${indice}`);
     const correcta = Number(tarjeta.dataset.correcta);
     const explicacion = tarjeta.dataset.explicacion;
@@ -822,6 +987,9 @@ function corregirPregunta(indice) {
         titulo.textContent = 'Correcto.';
         detalle.textContent = explicacion;
         feedback.append(titulo, detalle);
+        estadoPreguntas[indice] = true;
+        actualizarGrafico();
+        if (mostrarModal) abrirModal(true, indice);
         return true;
     }
 
@@ -834,13 +1002,16 @@ function corregirPregunta(indice) {
     const textoCorrecto = opcionCorrecta.querySelector('label').textContent;
     detalle.textContent = `Tu respuesta fue: ${textoUsuario}. La respuesta correcta era: ${textoCorrecto}. ${explicacion}`;
     feedback.append(titulo, detalle);
+    estadoPreguntas[indice] = false;
+    actualizarGrafico();
+    if (mostrarModal) abrirModal(false, indice);
     return false;
 }
 
 function corregirQuiz() {
     let aciertos = 0;
     document.querySelectorAll('.pregunta').forEach((pregunta, indice) => {
-        if (corregirPregunta(indice)) aciertos++;
+        if (corregirPregunta(indice, false)) aciertos++;
     });
     mostrarResultado(aciertos);
 }
@@ -875,11 +1046,16 @@ function reiniciarQuiz() {
         feedback.innerHTML = '';
     });
     document.querySelectorAll('.opcion').forEach(opcion => opcion.classList.remove('correcta', 'incorrecta'));
+    estadoPreguntas.fill(null);
     document.getElementById('resultadoFinal').classList.remove('visible');
     progreso.style.width = '0%';
     textoProgreso.textContent = `Has respondido 0 de ${totalPreguntas} preguntas.`;
+    actualizarGrafico();
+    cerrarModalMotivacion();
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+actualizarGrafico();
 </script>
 </body>
 </html>
