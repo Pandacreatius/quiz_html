@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de HTML Semántico</title>
+    <link rel="stylesheet" href="css/ejercicio-semantica.css">
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Practica en clase</p>
+                <h1>Construye una estructura HTML semántica básica</h1>
+                <p class="hero-text">
+                    Arrastra las etiquetas a su lugar correcto para montar una página sencilla.
+                    Después pulsa en corregir para ver aciertos, errores y sugerencias.
+                </p>
+                <div class="hero-links">
+                    <a class="hero-link" href="index.html">Volver al quiz interactivo</a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <p class="hero-card-label">Objetivo</p>
+                <p class="hero-card-text">
+                    Montar un documento HTML completo con etiquetas de estructura,
+                    contenido y metadatos usando una jerarquía correcta.
+                </p>
+            </div>
+        </section>
+
+        <section class="panel feedback-panel">
+            <div class="panel-head">
+                <h2>Corrección</h2>
+                <p>Revisa tu solución y consulta pistas rápidas</p>
+            </div>
+
+            <div class="feedback-top">
+                <div class="actions-panel">
+                    <div class="actions">
+                        <button class="action-button primary" id="check-button">Corregir</button>
+                        <button class="action-button secondary" id="hint-button">Dar pista</button>
+                        <button class="action-button ghost" id="reset-button">Reiniciar</button>
+                    </div>
+                </div>
+
+                <div class="score-card" id="score-card">
+                    <p class="score-label">Resultado</p>
+                    <p class="score-value">Aún no corregido</p>
+                    <p class="score-detail" id="score-detail">Coloca las etiquetas y corrige cuando quieras.</p>
+                </div>
+
+                <div class="feedback-box">
+                    <h3>Sugerencias</h3>
+                    <ul id="feedback-list">
+                        <li>Empieza por la etiqueta raíz y después completa <code>&lt;head&gt;</code> y <code>&lt;body&gt;</code>.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="workspace">
+            <div class="panel tray-panel">
+                <div class="panel-head">
+                    <h2>Etiquetas</h2>
+                    <p>Arrastra desde aquí</p>
+                </div>
+
+                <div class="tag-tray" id="tag-tray">
+                    <button class="tag-chip" draggable="true" data-tag="html">&lt;html&gt;</button>
+                    <button class="tag-chip" draggable="true" data-tag="head">&lt;head&gt;</button>
+                    <button class="tag-chip" draggable="true" data-tag="meta-charset">&lt;meta charset="UTF-8"&gt;</button>
+                    <button class="tag-chip" draggable="true" data-tag="meta-viewport">&lt;meta name="viewport"&gt;</button>
+                    <button class="tag-chip" draggable="true" data-tag="title">&lt;title&gt;</button>
+                    <button class="tag-chip" draggable="true" data-tag="body">&lt;body&gt;</button>
+                    <button class="tag-chip" draggable="true" data-tag="header">&lt;header&gt;</button>
+                    <button class="tag-chip" draggable="true" data-tag="nav">&lt;nav&gt;</button>
+                    <button class="tag-chip" draggable="true" data-tag="main">&lt;main&gt;</button>
+                    <button class="tag-chip" draggable="true" data-tag="section">&lt;section&gt;</button>
+                    <button class="tag-chip" draggable="true" data-tag="h1">&lt;h1&gt;</button>
+                    <button class="tag-chip" draggable="true" data-tag="p">&lt;p&gt;</button>
+                    <button class="tag-chip" draggable="true" data-tag="footer">&lt;footer&gt;</button>
+                    <button class="tag-chip distractor" draggable="true" data-tag="div">&lt;div&gt;</button>
+                    <button class="tag-chip distractor" draggable="true" data-tag="span">&lt;span&gt;</button>
+                </div>
+            </div>
+
+            <div class="panel builder-panel">
+                <div class="panel-head">
+                    <h2>Zona de montaje</h2>
+                    <p>Completa el esquema de la página</p>
+                </div>
+
+                <div class="builder">
+                    <div class="drop-slot main-slot" data-accept="html">
+                        <span class="slot-label">Etiqueta raíz del documento</span>
+                        <span class="slot-hint">Envuelve toda la página HTML</span>
+
+                        <div class="nested-drop-slot" data-accept="head">
+                            <span class="slot-label">Cabecera técnica del documento</span>
+                            <span class="slot-hint">Aquí van metadatos y el título</span>
+
+                            <div class="nested-drop-slot" data-accept="meta-charset">
+                                <span class="slot-label">Codificación de caracteres</span>
+                                <span class="slot-hint">Sirve para mostrar bien tildes y caracteres especiales</span>
+                            </div>
+
+                            <div class="nested-drop-slot" data-accept="meta-viewport">
+                                <span class="slot-label">Ajuste para móviles</span>
+                                <span class="slot-hint">Ayuda a que la web se adapte al ancho del dispositivo</span>
+                            </div>
+
+                            <div class="nested-drop-slot" data-accept="title">
+                                <span class="slot-label">Título de la pestaña</span>
+                                <span class="slot-hint">Texto que aparece en la parte superior del navegador</span>
+                            </div>
+                        </div>
+
+                        <div class="nested-drop-slot" data-accept="body">
+                            <span class="slot-label">Cuerpo visible de la página</span>
+                            <span class="slot-hint">Todo lo que ve el usuario va dentro de esta zona</span>
+
+                            <div class="nested-drop-slot" data-accept="header">
+                                <span class="slot-label">Parte superior de la página</span>
+                                <span class="slot-hint">Suele contener la cabecera del sitio</span>
+                            </div>
+
+                            <div class="nested-drop-slot" data-accept="nav">
+                                <span class="slot-label">Menú de navegación</span>
+                                <span class="slot-hint">Zona de enlaces principales</span>
+                            </div>
+
+                            <div class="nested-drop-slot" data-accept="main">
+                                <span class="slot-label">Contenido principal</span>
+                                <span class="slot-hint">La parte más importante del documento</span>
+
+                                <div class="nested-drop-slot" data-accept="section">
+                                    <span class="slot-label">Bloque temático dentro del contenido</span>
+                                    <span class="slot-hint">Por ejemplo servicios, noticias o contacto</span>
+                                </div>
+
+                                <div class="nested-drop-slot" data-accept="h1">
+                                    <span class="slot-label">Título principal</span>
+                                    <span class="slot-hint">El encabezado más importante de la página</span>
+                                </div>
+
+                                <div class="nested-drop-slot" data-accept="p">
+                                    <span class="slot-label">Párrafo de texto</span>
+                                    <span class="slot-hint">Sirve para escribir contenido en bloques de texto</span>
+                                </div>
+                            </div>
+
+                            <div class="nested-drop-slot" data-accept="footer">
+                                <span class="slot-label">Parte final de la página</span>
+                                <span class="slot-hint">Información de cierre o contacto</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/ejercicio-semantica.js"></script>
+</body>
+</html>
